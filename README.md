@@ -1,1 +1,1 @@
-# ks8-setup
+# k8s-setup
