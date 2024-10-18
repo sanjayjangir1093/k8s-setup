@@ -46,8 +46,8 @@ sudo systemctl enable --now kubelet
 sudo sed -i "s/SystemdCgroup = false/SystemdCgroup = true/g" /etc/containerd/config.toml
 # Restart the containerd service
 sudo systemctl restart containerd
-sudo kubeadm config images pull --cri-socket /run/containerd/containerd.sock --kubernetes-version v1.29.4
-sudo kubeadm init   --pod-network-cidr=10.244.0.0/16   --upload-certs --kubernetes-version=v1.29.4  --control-plane-endpoint=ip --ignore-preflight-errors=all  --cri-socket /run/containerd/containerd.sock --node-name master
+sudo kubeadm config images pull --cri-socket /run/containerd/containerd.sock --kubernetes-version v1.29.6
+sudo kubeadm init   --pod-network-cidr=10.244.0.0/16   --upload-certs --kubernetes-version=v1.29.6  --control-plane-endpoint=ip --ignore-preflight-errors=all  --cri-socket /run/containerd/containerd.sock --node-name master
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
